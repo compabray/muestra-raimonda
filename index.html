@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Veterinaria Raimonda - San Carlos, Uruguay</title>
+
+  <!-- Tailwind + Font Awesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!--
+    Paleta (masculina, profesional)
+    Azul principal:  #1D4ED8 (blue-600)
+    Azul oscuro:     #0F172A (slate-900)
+    Verde principal: #16A34A (green-600)
+    Verde oscuro:    #166534 (green-700)
+  -->
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    * { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+
+    .gradient-bg { background: linear-gradient(135deg, #1D4ED8 0%, #16A34A 100%); }
+    .gradient-text {
+      background: linear-gradient(135deg, #1D4ED8 0%, #16A34A 100%);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    /* Hero con overlay doble para legibilidad */
+    .hero-bg {
+      background:
+        linear-gradient(rgba(0,0,0,.50), rgba(0,0,0,.55)),
+        linear-gradient(135deg, rgba(15,23,42,.35) 0%, rgba(22,101,52,.35) 100%),
+        url('https://images.unsplash.com/photo-1612225330565-f79af9f92168?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.1.0') center/cover no-repeat;
+    }
+
+    .paw-bg { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 20 20'><g fill='rgba(2,6,23,0.05)'><circle cx='6' cy='6' r='2'/><circle cx='14' cy='6' r='2'/><circle cx='8' cy='10' r='2'/><circle cx='12' cy='10' r='2'/><ellipse cx='10' cy='14' rx='4' ry='3'/></g></svg>"); background-size: 32px 32px; }
+
+    .card-hover { transition: transform .25s ease, box-shadow .25s ease; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 18px 36px rgba(2,6,23,0.08); }
+
+    .floating-whatsapp { position: fixed; bottom: 18px; right: 18px; z-index: 1000; transition: transform .15s ease; }
+    .floating-whatsapp:hover { transform: scale(1.05); }
+
+    .fade-in { opacity: 0; transform: translateY(18px); transition: all .45s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* Mapa responsive (16:9) */
+    .map-wrap { position: relative; width: 100%; padding-top: 56.25%; border: 0; }
+    .map-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+  <!-- NAV -->
+  <nav class="bg-white/90 backdrop-blur-md border-b border-gray-100 fixed w-full z-50 top-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="#inicio" class="flex items-center gap-2">
+          <i class="fa-solid fa-paw text-2xl text-green-600"></i>
+          <span class="text-xl font-semibold">Veterinaria Raimonda</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#inicio" class="text-gray-600 hover:text-blue-700">Inicio</a>
+          <a href="#servicios" class="text-gray-600 hover:text-blue-700">Servicios</a>
+          <a href="#campo" class="text-gray-600 hover:text-blue-700">Grandes animales</a>
+          <a href="#petshop" class="text-gray-600 hover:text-blue-700">Pet Shop</a>
+          <a href="#nosotros" class="text-gray-600 hover:text-blue-700">Nosotros</a>
+          <a href="#ubicacion" class="text-gray-600 hover:text-blue-700">Ubicación</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="tel:+59843222333" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-600 text-blue-700 hover:bg-blue-50">
+            <i class="fa-solid fa-phone"></i><span>Llamar</span>
+          </a>
+          <a href="https://wa.me/59899123456" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-600 text-white hover:bg-green-700">
+            <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero-bg min-h-[95vh] flex items-center text-white pt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="text-center max-w-3xl mx-auto fade-in">
+        <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
+          Atención veterinaria <span class="text-green-400">confiable</span> en San Carlos
+        </h1>
+        <p class="mt-5 text-lg md:text-xl text-blue-100">
+          Cuidado profesional para perros, gatos, equinos y bovinos. Clínica y salidas a campo <span class="opacity-80">(consultar disponibilidad)</span>.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://wa.me/59899123456" class="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-green-600 hover:bg-green-700 text-white text-lg shadow">
+            <i class="fa-brands fa-whatsapp"></i><span>Escribinos por WhatsApp</span>
+          </a>
+          <a href="https://share.google/GwomDJIRLD5fWmzQU" target="_blank"
+             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-blue-700 hover:bg-blue-50">
+            <i class="fa-solid fa-route"></i><span>Cómo llegar</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS -->
+  <section id="nosotros" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Texto primero (celu y desktop) -->
+        <div class="fade-in order-1">
+          <h2 class="text-4xl font-bold text-gray-800 mb-6">
+            Sobre <span class="gradient-text">Nosotros</span>
+          </h2>
+          <p class="text-lg text-gray-600 mb-6">
+            Desde 2008, la Dr. Alejandro Raimonda y su equipo han dedicado sus vidas al cuidado y bienestar de las mascotas de San Carlos y alrededores. Nuestra clínica cuenta con equipamiento moderno y un equipo comprometido con la salud animal.
+          </p>
+          <p class="text-lg text-gray-600 mb-8">
+            Creemos que cada mascota merece atención personalizada y cariñosa. Por eso, nos tomamos el tiempo necesario para entender las necesidades específicas de cada animal y su familia.
+          </p>
+          <div class="flex items-center gap-8">
+            <div class="text-center">
+              <div class="text-3xl font-bold gradient-text">15+</div>
+              <div class="text-gray-600">Años de experiencia</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold gradient-text">2000+</div>
+              <div class="text-gray-600">Mascotas atendidas</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold gradient-text">San Carlos</div>
+              <div class="text-gray-600">Maldonado</div>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <a href="#ubicacion"
+               class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-blue-600 text-blue-700 hover:bg-blue-50">
+              <i class="fa-solid fa-location-dot"></i><span>Ver ubicación</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Imagen segunda (celu) -->
+        <div class="fade-in order-2">
+          <img src="https://images.unsplash.com/photo-1559190394-df5a28aab5c5?auto=format&fit=crop&w=1000&q=80"
+               alt="Veterinario atendiendo a un perro"
+               class="rounded-2xl shadow-2xl w-full">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS: Pequeños animales (texto primero en celu) -->
+  <section id="servicios" class="py-20 bg-gradient-to-br from-blue-50 to-green-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <!-- Texto primero en mobile, a la derecha en desktop -->
+        <div class="order-1 lg:order-2 fade-in">
+          <h2 class="text-4xl font-bold">
+            Servicios para <span class="gradient-text">pequeños animales</span>
+          </h2>
+          <p class="mt-3 text-gray-600">
+            Soluciones claras y responsables para <strong>perros</strong> y <strong>gatos</strong>:
+            prevención primero, respuesta rápida cuando hace falta.
+          </p>
+
+          <!-- Chips -->
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full bg-white text-gray-700 text-sm border border-gray-200">Vacunación</span>
+            <span class="px-3 py-1 rounded-full bg-white text-gray-700 text-sm border border-gray-200">Desparasitación</span>
+            <span class="px-3 py-1 rounded-full bg-white text-gray-700 text-sm border border-gray-200">Castraciones</span>
+            <span class="px-3 py-1 rounded-full bg-white text-gray-700 text-sm border border-gray-200">Farmacia</span>
+            <span class="px-3 py-1 rounded-full bg-white text-gray-700 text-sm border border-gray-200">Alimentos</span>
+          </div>
+
+          <!-- Lista -->
+          <ul class="mt-6 space-y-3">
+            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-600 mt-0.5"></i><span><strong>Consultas</strong> y controles de rutina</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-600 mt-0.5"></i><span><strong>Vacunación</strong> y <strong>desparasitación</strong> con plan preventivo</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-600 mt-0.5"></i><span><strong>Castraciones</strong> y cirugías menores</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-600 mt-0.5"></i><span>Curaciones, <strong>diagnóstico básico</strong> y tratamientos</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-600 mt-0.5"></i><span><strong>Farmacia</strong> y <strong>venta de ración</strong></span></li>
+          </ul>
+
+          <!-- CTAs -->
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="https://wa.me/59899123456?text=Hola%20Raimonda%2C%20consulta%20por%20servicios%20para%20mascotas."
+               class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-green-600 text-white hover:bg-green-700">
+              <i class="fa-brands fa-whatsapp"></i><span>Consultar por WhatsApp</span>
+            </a>
+            <a href="#ubicacion"
+               class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-blue-600 text-blue-700 hover:bg-blue-50">
+              <i class="fa-solid fa-location-dot"></i><span>Ver ubicación</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Imagen segunda en mobile, izquierda en desktop -->
+        <div class="order-2 lg:order-1 fade-in">
+          <div class="rounded-2xl overflow-hidden shadow-lg">
+            <img
+              src="https://images.unsplash.com/photo-1621951825147-bcf82eed6249?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0"
+              alt="Pequeños animales en clínica veterinaria en San Carlos, Maldonado"
+              class="w-full h-[420px] object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRANDES ANIMALES / CAMPO (texto primero en celu) -->
+  <section id="campo" class="py-20 bg-white paw-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <!-- Texto primero (mobile y desktop) -->
+        <div class="fade-in order-1">
+          <h2 class="text-4xl font-bold mb-3">
+            Servicios para <span class="gradient-text">grandes animales</span>
+          </h2>
+          <p class="text-gray-600 mb-6">
+            Atención a campo para equinos y bovinos en San Carlos y alrededores. <span class="text-gray-700 font-medium">Consultá disponibilidad</span>.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div class="bg-white/90 p-6 rounded-xl border border-gray-100">
+              <div class="text-2xl text-green-700 mb-2"><i class="fa-solid fa-horse"></i></div>
+              <h3 class="font-semibold">Equinos</h3>
+              <ul class="mt-2 text-gray-600 list-disc list-inside space-y-1">
+                <li>Vacunación y desparasitación</li>
+                <li>Primeros auxilios</li>
+                <li>Control general</li>
+              </ul>
+            </div>
+            <div class="bg-white/90 p-6 rounded-xl border border-gray-100">
+              <div class="text-2xl text-green-700 mb-2"><i class="fa-solid fa-cow"></i></div>
+              <h3 class="font-semibold">Bovinos</h3>
+              <ul class="mt-2 text-gray-600 list-disc list-inside space-y-1">
+                <li>Plan sanitario</li>
+                <li>Atención a campo</li>
+                <li>Asesoramiento básico</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="https://wa.me/59899123456" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-green-600 text-white hover:bg-green-700">
+              <i class="fa-brands fa-whatsapp"></i><span>Coordinar visita</span>
+            </a>
+            <a href="#ubicacion" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-blue-600 text-blue-700 hover:bg-blue-50">
+              <i class="fa-solid fa-location-dot"></i><span>Zona de cobertura</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Imagen segunda (mobile) -->
+        <div class="fade-in order-2">
+          <div class="rounded-2xl overflow-hidden shadow-lg">
+            <img src="https://images.unsplash.com/photo-1528298396603-cbf660af6180?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                 alt="Atención veterinaria para equinos y bovinos"
+                 class="w-full h-[420px] object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PET SHOP / RACIÓN (texto primero en celu, foto/ texto en desktop) -->
+  <section id="petshop" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <!-- Texto primero en mobile, derecha en desktop -->
+        <div class="order-1 lg:order-2 fade-in">
+          <h2 class="text-4xl font-bold">Pet Shop y <span class="gradient-text">Ración</span></h2>
+          <p class="mt-3 text-gray-600">
+            Alimentos balanceados, accesorios y cuidados básicos. Pedinos recomendación según la etapa y tamaño de tu mascota.
+          </p>
+
+          <div class="mt-6 grid sm:grid-cols-2 gap-6">
+            <div class="p-5 rounded-xl border border-gray-100 card-hover">
+              <div class="text-2xl text-blue-700"><i class="fa-solid fa-bowl-food"></i></div>
+              <h3 class="mt-2 font-semibold">Ración premium</h3>
+              <p class="mt-1 text-gray-600">Para cachorros, adultos y seniors.</p>
+            </div>
+            <div class="p-5 rounded-xl border border-gray-100 card-hover">
+              <div class="text-2xl text-blue-700"><i class="fa-solid fa-bone"></i></div>
+              <h3 class="mt-2 font-semibold">Accesorios</h3>
+              <p class="mt-1 text-gray-600">Correas, collares, juguetes resistentes.</p>
+            </div>
+          </div>
+
+          <div class="mt-6">
+            <a href="https://wa.me/59899123456" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-green-600 text-white hover:bg-green-700">
+              <i class="fa-brands fa-whatsapp"></i><span>Consultar stock</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Imagen segunda en mobile, izquierda en desktop -->
+        <div class="order-2 lg:order-1 fade-in">
+          <div class="rounded-2xl overflow-hidden shadow-lg">
+            <!-- Foto mock (reemplazar por foto real del local) -->
+            <img src="https://thumbs.dreamstime.com/b/many-types-pet-food-products-pet-shop-bangkok-thailand-april-dog-cat-other-goods-shelf-91957571.jpg"
+                 alt="Ración y accesorios para mascotas"
+                 class="w-full h-[420px] object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10 fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold">Preguntas frecuentes</h2>
+        <p class="mt-2 text-gray-600">Información rápida y directa.</p>
+      </div>
+
+      <div class="space-y-4">
+        <details class="group bg-white rounded-xl border border-gray-200 p-4 fade-in">
+          <summary class="flex cursor-pointer items-center justify-between">
+            <span class="font-semibold text-gray-900">¿Atienden urgencias?</span>
+            <i class="fa-solid fa-chevron-down transition-transform rotate text-gray-500"></i>
+          </summary>
+          <div class="mt-3 text-gray-600">
+            Consultá disponibilidad por WhatsApp o teléfono para coordinar la mejor respuesta.
+          </div>
+        </details>
+
+        <details class="group bg-white rounded-xl border border-gray-200 p-4 fade-in">
+          <summary class="flex cursor-pointer items-center justify-between">
+            <span class="font-semibold text-gray-900">¿Hacen visitas a campo?</span>
+            <i class="fa-solid fa-chevron-down transition-transform rotate text-gray-500"></i>
+          </summary>
+          <div class="mt-3 text-gray-600">
+            Sí, para equinos y bovinos en San Carlos y zonas cercanas. Coordinación sujeta a agenda.
+          </div>
+        </details>
+
+        <details class="group bg-white rounded-xl border border-gray-200 p-4 fade-in">
+          <summary class="flex cursor-pointer items-center justify-between">
+            <span class="font-semibold text-gray-900">¿Cuáles son los medios de contacto?</span>
+            <i class="fa-solid fa-chevron-down transition-transform rotate text-gray-500"></i>
+          </summary>
+          <div class="mt-3 text-gray-600">
+            WhatsApp, llamada telefónica y correo electrónico. Ver sección “Ubicación”.
+          </div>
+        </details>
+
+        <details class="group bg-white rounded-xl border border-gray-200 p-4 fade-in">
+          <summary class="flex cursor-pointer items-center justify-between">
+            <span class="font-semibold text-gray-900">¿Qué marcas de ración manejan?</span>
+            <i class="fa-solid fa-chevron-down transition-transform rotate text-gray-500"></i>
+          </summary>
+          <div class="mt-3 text-gray-600">
+            Varía según disponibilidad. Escribinos y te asesoramos según la etapa y tamaño de tu mascota.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN Y CONTACTO (mapa responsive) -->
+  <section id="ubicacion" class="py-20 gradient-bg text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-4xl font-bold">Ubicación y contacto</h2>
+        <p class="text-blue-100 mt-2">San Carlos, Maldonado — Cobertura para Pan de Azúcar y alrededores.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-10">
+        <!-- Datos (primero en mobile) -->
+        <div class="fade-in order-1">
+          <div class="bg-white/10 backdrop-blur-md rounded-2xl p-7">
+            <div class="space-y-5">
+              <div class="flex items-start gap-4">
+                <i class="fa-solid fa-location-dot text-2xl text-green-300"></i>
+                <div>
+                  <div class="font-semibold">Dirección</div>
+                  <div class="text-blue-100">San Carlos, Maldonado, Uruguay</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <i class="fa-solid fa-phone text-2xl text-green-300"></i>
+                <div>
+                  <div class="font-semibold">Teléfono</div>
+                  <div class="text-blue-100">+598 4322 2333</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <i class="fa-brands fa-whatsapp text-2xl text-green-300"></i>
+                <div>
+                  <div class="font-semibold">WhatsApp</div>
+                  <div class="text-blue-100">+598 99 123 456</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <i class="fa-solid fa-envelope text-2xl text-green-300"></i>
+                <div>
+                  <div class="font-semibold">Email</div>
+                  <div class="text-blue-100">info@veterinariaraimonda.com.uy</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <i class="fa-regular fa-clock text-2xl text-green-300"></i>
+                <div>
+                  <div class="font-semibold">Horarios</div>
+                  <div class="text-blue-100">Lun–Vie: 8:00–19:00 · Sáb: 8:00–13:00<br><span class="opacity-80">Urgencias: consultar disponibilidad</span></div>
+                </div>
+              </div>
+
+              <div class="pt-2 flex flex-wrap gap-3">
+                <a href="https://share.google/GwomDJIRLD5fWmzQU" target="_blank"
+                   class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-blue-700 hover:bg-blue-50">
+                  <i class="fa-solid fa-route"></i><span>Cómo llegar</span>
+                </a>
+                <a href="https://wa.me/59899123456" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-green-600 text-white hover:bg-green-700">
+                  <i class="fa-brands fa-whatsapp"></i><span>Escribir ahora</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mapa (segundo en mobile) -->
+        <div class="fade-in order-2">
+          <div class="rounded-2xl overflow-hidden shadow-lg bg-white/10">
+            <div class="map-wrap">
+              <!-- Reemplazá por el iframe de tu ficha si querés el pin exacto -->
+              <iframe
+                src="https://www.google.com/maps?q=Veterinaria%20Raimonda%20San%20Carlos%20Maldonado%20Uruguay&hl=es-419&z=15&output=embed"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <div class="flex items-center justify-center mb-3 gap-2">
+          <i class="fa-solid fa-paw text-2xl text-green-500"></i>
+          <span class="text-2xl font-semibold">Veterinaria Raimonda</span>
+        </div>
+        <p class="text-gray-400">Cuidamos a tus animales con responsabilidad y cercanía.</p>
+        <div class="mt-6 flex justify-center gap-6">
+          <a href="#" class="text-gray-400 hover:text-blue-400"><i class="fa-brands fa-facebook text-2xl"></i></a>
+          <a href="#" class="text-gray-400 hover:text-pink-400"><i class="fa-brands fa-instagram text-2xl"></i></a>
+          <a href="https://wa.me/59899123456" class="text-gray-400 hover:text-green-400"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
+        </div>
+        <div class="mt-8 pt-6 border-t border-white/10">
+          <p class="text-gray-500">&copy; 2025 Veterinaria Raimonda. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/59899123456" class="floating-whatsapp bg-green-600 text-white p-4 rounded-full shadow-lg" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp text-2xl"></i>
+  </a>
+
+  <script>
+    // Scroll suave
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (id.length > 1) {
+          e.preventDefault();
+          const t = document.querySelector(id);
+          if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Fade-in on scroll
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+    // Sombra del nav al scrollear
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 24) nav.classList.add('shadow-md');
+      else nav.classList.remove('shadow-md');
+    });
+  </script>
+</body>
+</html>
