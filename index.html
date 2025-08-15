@@ -62,15 +62,15 @@
           <span class="text-xl font-semibold">Veterinaria Raimonda</span>
         </a>
         <div class="hidden md:flex items-center gap-8">
-          <a href="#inicio" class="text-gray-600 hover:text-blue-700">Inicio</a>
           <a href="#servicios" class="text-gray-600 hover:text-blue-700">Servicios</a>
           <a href="#campo" class="text-gray-600 hover:text-blue-700">Grandes animales</a>
+            <a href="#equipamiento" class="text-gray-600 hover:text-blue-700">Equipamiento</a>
           <a href="#petshop" class="text-gray-600 hover:text-blue-700">Pet Shop</a>
           <a href="#nosotros" class="text-gray-600 hover:text-blue-700">Nosotros</a>
           <a href="#ubicacion" class="text-gray-600 hover:text-blue-700">Ubicación</a>
         </div>
         <div class="flex items-center gap-3">
-          <a href="tel:+59843222333" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-600 text-blue-700 hover:bg-blue-50">
+          <a href="#ubicacion" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-600 text-blue-700 hover:bg-blue-50">
             <i class="fa-solid fa-phone"></i><span>Llamar</span>
           </a>
           <a href="https://wa.me/59895523940" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-600 text-white hover:bg-green-700">
@@ -105,27 +105,31 @@
   </section>
 
   <!-- SOBRE NOSOTROS -->
-  <section id="nosotros" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <!-- Texto primero (celu y desktop) -->
-        <div class="fade-in order-1">
-          <h2 class="text-4xl font-bold text-gray-800 mb-6">
-            Sobre <span class="gradient-text">Nosotros</span>
-          </h2>
-          <p class="text-lg text-gray-600 mb-6">
-            Desde 2008, la Dr. Alejandro Raimonda y su equipo han dedicado sus vidas al cuidado y bienestar de las mascotas de San Carlos y alrededores. Nuestra clínica cuenta con equipamiento moderno y un equipo comprometido con la salud animal.
-          </p>
-          <p class="text-lg text-gray-600 mb-8">
-            Creemos que cada mascota merece atención personalizada y cariñosa. Por eso, nos tomamos el tiempo necesario para entender las necesidades específicas de cada animal y su familia.
-          </p>
+<section id="nosotros" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 lg:gap-12 items-center">
+      
+      <!-- 1) Texto (siempre arriba en mobile; col1 en desktop) -->
+      <div class="fade-in order-1 lg:order-none lg:col-start-1 lg:row-start-1">
+        <h2 class="text-4xl font-bold text-gray-800 mb-6">
+          Sobre <span class="gradient-text">Nosotros</span>
+        </h2>
+        <p class="text-lg text-gray-600 mb-6">
+          Hace más de 30 años, el Dr. Alejandro Raimonda y su equipo han dedicado sus vidas al cuidado y bienestar de las mascotas de San Carlos y alrededores. Nuestra clínica cuenta con equipamiento moderno y un equipo comprometido con la salud animal.
+        </p>
+        <p class="text-lg text-gray-600">
+          En la veterinaria nos enfocamos en dar una atención seria y personalizada. Escuchamos, evaluamos y buscamos siempre el tratamiento más adecuado, cuidando tanto la salud de tu mascota como tu tranquilidad.
+        </p>
+
+        <!-- Stats + CTA (DESKTOP) -->
+        <div class="hidden lg:block mt-8">
           <div class="flex items-center gap-8">
             <div class="text-center">
-              <div class="text-3xl font-bold gradient-text">15+</div>
+              <div class="text-3xl font-bold gradient-text">30+</div>
               <div class="text-gray-600">Años de experiencia</div>
             </div>
             <div class="text-center">
-              <div class="text-3xl font-bold gradient-text">2000+</div>
+              <div class="text-3xl font-bold gradient-text">2500+</div>
               <div class="text-gray-600">Mascotas atendidas</div>
             </div>
             <div class="text-center">
@@ -133,7 +137,6 @@
               <div class="text-gray-600">Maldonado</div>
             </div>
           </div>
-
           <div class="mt-8">
             <a href="#ubicacion"
                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-blue-600 text-blue-700 hover:bg-blue-50">
@@ -141,16 +144,43 @@
             </a>
           </div>
         </div>
+      </div>
 
-        <!-- Imagen segunda (celu) -->
-        <div class="fade-in order-2">
-          <img src="/img/local_afuera.webp"
-               alt="Veterinario atendiendo a un perro"
-               class="rounded-2xl shadow-2xl w-full">
+      <!-- 2) Imagen (segunda en mobile; col2 en desktop) -->
+      <div class="fade-in order-2 lg:order-none lg:col-start-2 lg:row-start-1 mt-8 lg:mt-0">
+        <img src="/img/local_afuera.webp"
+             alt="Veterinaria Raimonda en San Carlos"
+             class="rounded-2xl shadow-2xl w-full">
+      </div>
+
+      <!-- 3) Stats + CTA (MOBILE) -->
+      <div class="fade-in order-3 lg:hidden mt-8">
+        <div class="flex items-center gap-8">
+          <div class="text-center">
+            <div class="text-3xl font-bold gradient-text">30+</div>
+            <div class="text-gray-600">Años de experiencia</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold gradient-text">2500+</div>
+            <div class="text-gray-600">Mascotas atendidas</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold gradient-text">San Carlos</div>
+            <div class="text-gray-600">Maldonado</div>
+          </div>
+        </div>
+        <div class="mt-8">
+          <a href="#ubicacion"
+             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-blue-600 text-blue-700 hover:bg-blue-50">
+            <i class="fa-solid fa-location-dot"></i><span>Ver ubicación</span>
+          </a>
         </div>
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- SERVICIOS: Pequeños animales (texto primero en celu) -->
   <section id="servicios" class="py-20 bg-gradient-to-br from-blue-50 to-green-50">
@@ -210,6 +240,232 @@
     </div>
   </section>
 
+<!-- NUESTRO EQUIPAMIENTO -->
+<!-- NUESTRO EQUIPAMIENTO (versión responsive y proporcional) -->
+<section id="equipamiento" class="py-20 bg-blue-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center mb-12 fade-in">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">
+        Nuestro <span class="gradient-text">Equipamiento</span>
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Tecnología moderna para diagnósticos precisos y atención veterinaria de calidad en San Carlos.
+      </p>
+    </div>
+
+    <!-- Grid principal -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+      <!-- Card: Ecógrafo -->
+      <article class="fade-in h-full">
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover h-full flex flex-col">
+          <!-- Foto (5:4) -->
+          <div class="relative aspect-[5/4] w-full overflow-hidden">
+            <img
+              src="/img/ecografo2.jpeg"
+              alt="Ecógrafo veterinario para diagnóstico por imágenes"
+              class="w-full h-full object-cover">
+            <span class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium shadow">
+              Diagnóstico avanzado
+            </span>
+          </div>
+
+          <!-- Contenido -->
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="bg-blue-100 p-2 rounded-xl">
+                <i class="fa-solid fa-heart-pulse text-xl text-blue-600"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800">Ecógrafo Veterinario</h3>
+            </div>
+            <p class="text-gray-600 mb-5">
+Imágenes en tiempo real para evaluar órganos internos, controlar gestaciones y detectar patologías con precisión.
+
+            </p>
+
+            <!-- Bullets -->
+            <ul class="grid grid-cols-2 gap-2 text-sm text-gray-700 mt-auto">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600 text-xs"></i><span>Abdomen</span></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600 text-xs"></i><span>Reproductivo</span></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600 text-xs"></i><span>Cardíaco</span></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600 text-xs"></i><span>Detección temprana</span></li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+<article class="fade-in h-full">
+  <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover h-full flex flex-col">
+    <!-- Foto (5:4) -->
+    <div class="relative aspect-[5/4] w-full overflow-hidden">
+      <img
+        src="/img/maquinas_animales_pequenos.webp"
+        alt="Analizadores hematológicos y bioquímicos para diagnóstico veterinario"
+        class="w-full h-full object-cover">
+      <span class="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium shadow">
+        Tecnología
+      </span>
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-6 flex-1 flex flex-col">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="bg-green-100 p-2 rounded-xl">
+          <i class="fa-solid fa-flask text-xl text-green-600"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800">Laboratorio Veterinario</h3>
+      </div>
+      <p class="text-gray-600 mb-5">
+        Contamos con analizadores hematológicos y bioquímicos que nos permiten hacer análisis de sangre completos en minutos para diagnósticos rápidos, seguros y seguimiento de tratamientos.
+
+      </p>
+
+      <!-- Bullets -->
+      <ul class="grid grid-cols-2 gap-2 text-sm text-gray-700 mt-auto">
+        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600 text-xs"></i><span>Hemogramas completos</span></li>
+        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600 text-xs"></i><span>Perfil bioquímico</span></li>
+        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600 text-xs"></i><span>Resultados en minutos</span></li>
+        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600 text-xs"></i><span>Mayor seguridad diagnóstica</span></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+    </div>
+
+    <!-- Tira de features (compacta, mejor que 4 cards grandes) -->
+    <div class="fade-in">
+      <div class="bg-white rounded-2xl p-6 shadow-md">
+        <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+          <li class="flex items-start gap-3">
+            <span class="bg-blue-100 p-2 rounded-lg"><i class="fa-solid fa-microscope text-blue-600"></i></span>
+            <div>
+              <h4 class="font-medium text-gray-800">Laboratorio básico</h4>
+              <p class="text-gray-600 text-xs mt-1">Análisis inmediatos</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="bg-green-100 p-2 rounded-lg"><i class="fa-solid fa-thermometer text-green-600"></i></span>
+            <div>
+              <h4 class="font-medium text-gray-800">Monitoreo vital</h4>
+              <p class="text-gray-600 text-xs mt-1">Signos precisos</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="bg-purple-100 p-2 rounded-lg"><i class="fa-solid fa-scissors text-purple-600"></i></span>
+            <div>
+              <h4 class="font-medium text-gray-800">Instrumental quirúrgico</h4>
+              <p class="text-gray-600 text-xs mt-1">Cirugías seguras</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="bg-orange-100 p-2 rounded-lg"><i class="fa-solid fa-kit-medical text-orange-600"></i></span>
+            <div>
+              <h4 class="font-medium text-gray-800">Farmacia especializada</h4>
+              <p class="text-gray-600 text-xs mt-1">Medicamentos veterinarios</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="petshop" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Título y subtítulo siempre primero -->
+    <div class="fade-in mb-10">
+      <h2 class="text-4xl font-bold text-center">
+        Pet Shop y <span class="gradient-text">Ración</span>
+      </h2>
+      <p class="mt-3 text-gray-600 text-center">
+        Alimentos balanceados, accesorios y cuidados básicos. Pedinos recomendación según la etapa y tamaño de tu mascota.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-10 items-center">
+      <!-- Imagen: en mobile aparece antes que las cards -->
+      <div class="order-1 lg:order-1 fade-in">
+        <div class="rounded-2xl overflow-hidden shadow-lg relative">
+          <img src="/img/inventario.webp"
+               alt="Ración y accesorios para mascotas"
+               class="w-full h-[420px] object-cover">
+          <div class="absolute top-4 left-4">
+            <span class="bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-medium shadow">
+              Stock en el local
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cards -->
+      <div class="order-2 lg:order-2 fade-in">
+        <div class="grid sm:grid-cols-2 gap-6">
+          <!-- Card 1 -->
+          <div class="group p-5 rounded-2xl border border-gray-100 shadow-sm bg-white/80 backdrop-blur card-hover hover:shadow-lg transition-all">
+            <div class="flex items-center gap-3">
+              <div class="shrink-0 w-12 h-12 rounded-2xl grid place-content-center
+                          bg-gradient-to-br from-blue-500 to-indigo-600 text-white shadow-md">
+                <i class="fa-solid fa-bowl-food text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold">Ración premium</h3>
+                <p class="text-xs text-gray-500">Cachorros · Adultos · Seniors</p>
+              </div>
+            </div>
+            <p class="mt-4 text-gray-600 text-sm">
+              Fórmulas balanceadas con buena digestibilidad y soporte nutricional.
+            </p>
+            <ul class="mt-4 grid grid-cols-1 gap-2 text-sm text-gray-700">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-emerald-600 text-xs"></i> Presentaciones pequeñas a grandes
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-emerald-600 text-xs"></i> Recomendación por etapa y tamaño
+              </li>
+            </ul>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="group p-5 rounded-2xl border border-gray-100 shadow-sm bg-white/80 backdrop-blur card-hover hover:shadow-lg transition-all">
+            <div class="flex items-center gap-3">
+              <div class="shrink-0 w-12 h-12 rounded-2xl grid place-content-center
+                          bg-gradient-to-br from-pink-500 to-rose-600 text-white shadow-md">
+                <i class="fa-solid fa-bone text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold">Accesorios</h3>
+                <p class="text-xs text-gray-500">Correas · Collares · Juguetes</p>
+              </div>
+            </div>
+            <p class="mt-4 text-gray-600 text-sm">
+              Productos resistentes para paseo, juego y entrenamiento diario.
+            </p>
+            <ul class="mt-4 grid grid-cols-1 gap-2 text-sm text-gray-700">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-emerald-600 text-xs"></i> Talles y materiales variados
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-emerald-600 text-xs"></i> Asesoramiento en elección y ajuste
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-6">
+          <a href="https://wa.me/59895523940"
+             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-green-600 text-white hover:bg-green-700">
+            <i class="fa-brands fa-whatsapp"></i><span>Consultar stock</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
   <!-- GRANDES ANIMALES / CAMPO (texto primero en celu) -->
   <section id="campo" class="py-20 bg-white paw-bg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -220,36 +476,39 @@
             Servicios para <span class="gradient-text">grandes animales</span>
           </h2>
           <p class="text-gray-600 mb-6">
-            Atención a campo para equinos y bovinos en San Carlos y alrededores. <span class="text-gray-700 font-medium">Consultá disponibilidad</span>.
+            Venta de insumos para equinos y bovinos <span class="text-gray-700 font-medium">Consultá disponibilidad</span>.
           </p>
 
           <div class="grid sm:grid-cols-2 gap-6">
             <div class="bg-white/90 p-6 rounded-xl border border-gray-100">
               <div class="text-2xl text-green-700 mb-2"><i class="fa-solid fa-horse"></i></div>
               <h3 class="font-semibold">Equinos</h3>
-              <ul class="mt-2 text-gray-600 list-disc list-inside space-y-1">
-                <li>Vacunación y desparasitación</li>
-                <li>Primeros auxilios</li>
-                <li>Control general</li>
-              </ul>
+      <ul class="mt-2 text-gray-600 list-disc list-inside space-y-1">
+  <li>Vacunas e inmunizantes</li>
+  <li>Kits y productos de primeros auxilios</li>
+  <li>Antiparasitarios y mosquicidas</li>
+</ul>
+
             </div>
             <div class="bg-white/90 p-6 rounded-xl border border-gray-100">
               <div class="text-2xl text-green-700 mb-2"><i class="fa-solid fa-cow"></i></div>
               <h3 class="font-semibold">Bovinos</h3>
-              <ul class="mt-2 text-gray-600 list-disc list-inside space-y-1">
-                <li>Plan sanitario</li>
-                <li>Atención a campo</li>
-                <li>Asesoramiento básico</li>
-              </ul>
+    <ul class="mt-2 text-gray-600 list-disc list-inside space-y-1">
+          <li>Vacunas e inmunizantes</li>
+  <li>Antiparasitarios y mosquicidas</li>
+  <li>Insumos para sanidad y manejo</li>
+
+</ul>
+
             </div>
           </div>
 
           <div class="mt-6 flex flex-wrap gap-3">
             <a href="https://wa.me/59895523940" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-green-600 text-white hover:bg-green-700">
-              <i class="fa-brands fa-whatsapp"></i><span>Coordinar visita</span>
+              <i class="fa-brands fa-whatsapp"></i><span>Consultá por WhatsApp</span>
             </a>
             <a href="#ubicacion" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-blue-600 text-blue-700 hover:bg-blue-50">
-              <i class="fa-solid fa-location-dot"></i><span>Zona de cobertura</span>
+              <i class="fa-solid fa-location-dot"></i><span>Ver ubicación</span>
             </a>
           </div>
         </div>
@@ -267,48 +526,7 @@
   </section>
 
   <!-- PET SHOP / RACIÓN (texto primero en celu, foto/ texto en desktop) -->
-  <section id="petshop" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-10 items-center">
-        <!-- Texto primero en mobile, derecha en desktop -->
-        <div class="order-1 lg:order-2 fade-in">
-          <h2 class="text-4xl font-bold">Pet Shop y <span class="gradient-text">Ración</span></h2>
-          <p class="mt-3 text-gray-600">
-            Alimentos balanceados, accesorios y cuidados básicos. Pedinos recomendación según la etapa y tamaño de tu mascota.
-          </p>
-
-          <div class="mt-6 grid sm:grid-cols-2 gap-6">
-            <div class="p-5 rounded-xl border border-gray-100 card-hover">
-              <div class="text-2xl text-blue-700"><i class="fa-solid fa-bowl-food"></i></div>
-              <h3 class="mt-2 font-semibold">Ración premium</h3>
-              <p class="mt-1 text-gray-600">Para cachorros, adultos y seniors.</p>
-            </div>
-            <div class="p-5 rounded-xl border border-gray-100 card-hover">
-              <div class="text-2xl text-blue-700"><i class="fa-solid fa-bone"></i></div>
-              <h3 class="mt-2 font-semibold">Accesorios</h3>
-              <p class="mt-1 text-gray-600">Correas, collares, juguetes resistentes.</p>
-            </div>
-          </div>
-
-          <div class="mt-6">
-            <a href="https://wa.me/59895523940" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-green-600 text-white hover:bg-green-700">
-              <i class="fa-brands fa-whatsapp"></i><span>Consultar stock</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Imagen segunda en mobile, izquierda en desktop -->
-        <div class="order-2 lg:order-1 fade-in">
-          <div class="rounded-2xl overflow-hidden shadow-lg">
-            <!-- Foto mock (reemplazar por foto real del local) -->
-            <img src="/img/inventario.webp"
-                 alt="Ración y accesorios para mascotas"
-                 class="w-full h-[420px] object-cover">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 
 
 
@@ -357,13 +575,17 @@
                 </div>
               </div>
 
-              <div class="flex items-start gap-4">
-                <i class="fa-regular fa-clock text-2xl text-green-300"></i>
-                <div>
-                  <div class="font-semibold">Horarios</div>
-                  <div class="text-blue-100">Lun–Vie: 8:00–19:00 · Sáb: 8:00–13:00<br><span class="opacity-80">Urgencias: consultar disponibilidad</span></div>
-                </div>
-              </div>
+             <div class="flex items-start gap-4">
+  <i class="fa-regular fa-clock text-2xl text-green-300"></i>
+  <div>
+    <div class="font-semibold">Horarios</div>
+    <div class="text-blue-100">
+      Lun–Vie: 7:00–12:00 · 14:00–18:30<br>
+      Sáb: 7:00–12:00
+    </div>
+  </div>
+</div>
+
 
               <div class="pt-2 flex flex-wrap gap-3">
                 <a href="https://maps.app.goo.gl/Q2DbfHr6JnkA3QRg6" target="_blank"
@@ -404,8 +626,6 @@
         </div>
         <p class="text-gray-400">Cuidamos a tus animales con responsabilidad y cercanía.</p>
         <div class="mt-6 flex justify-center gap-6">
-          <a href="#" class="text-gray-400 hover:text-blue-400"><i class="fa-brands fa-facebook text-2xl"></i></a>
-          <a href="#" class="text-gray-400 hover:text-pink-400"><i class="fa-brands fa-instagram text-2xl"></i></a>
           <a href="https://wa.me/59895523940" class="text-gray-400 hover:text-green-400"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
         </div>
         <div class="mt-8 pt-6 border-t border-white/10">
@@ -415,10 +635,6 @@
     </div>
   </footer>
 
-  <!-- Botón flotante WhatsApp -->
-  <a href="https://wa.me/59895523940" class="floating-whatsapp bg-green-600 text-white p-4 rounded-full shadow-lg" aria-label="WhatsApp">
-    <i class="fa-brands fa-whatsapp text-2xl"></i>
-  </a>
 
   <script>
     // Scroll suave
